@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Course Registration System</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="current">Home</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>Welcome to the Course Registration System</h1>
+            <p>Register for your courses easily and quickly!</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Registration Form -->
+        <form action="#" id="register-form">
+            <h2>Register</h2>
+            <label for="reg-name">Name:</label>
+            <input type="text" id="reg-name" name="name" required>
+
+            <label for="reg-email">Email:</label>
+            <input type="email" id="reg-email" name="email" required>
+
+            <label for="reg-password">Password:</label>
+            <input type="password" id="reg-password" name="password" required>
+
+            <input type="submit" value="Register">
+        </form>
+
+        <!-- Login Form -->
+        <form action="#" id="login-form" style="display: none;">
+            <h2>Login</h2>
+            <label for="login-name">Name:</label>
+            <input type="text" id="login-name" name="name" required>
+
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" name="email" required>
+
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="password" required>
+
+            <input type="submit" value="Login">
+        </form>
+
+        <!-- Available Courses Menu -->
+        <div id="courses-menu" style="display: none;">
+            <h2>Available Courses</h2>
+            <ul id="courses-list"></ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>Course Registration System &copy; 2024</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle registration and login
+        document.getElementById('register-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('reg-name').value;
+            const email = document.getElementById('reg-email').value;
+            const password = document.getElementById('reg-password').value;
+
+            fetch('http://localhost:3000/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, email, password })
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+                document.getElementById('register-form').style.display = 'none';
+                document.getElementById('login-form').style.display = 'block';
+            })
+            .catch(error => console.error('Error registering user:', error));
+        });
+
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Assume login is successful for demonstration purposes
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('courses-menu').style.display = 'block';
+
+            // Fetch and display courses
+            fetch('http://localhost:3000/api/courses')
+                .then(response => response.json())
+                .then(courses => {
+                    const coursesList = document.getElementById('courses-list');
+                    coursesList.innerHTML = '';
+                    courses.forEach(course => {
+                        const li = document.createElement('li');
+                        li.textContent = course.name;
+                        coursesList.appendChild(li);
+                    });
+                })
+                .catch(error => console.error('Error fetching courses:', error));
+        });
+    </script>
+</body>
+</html>
