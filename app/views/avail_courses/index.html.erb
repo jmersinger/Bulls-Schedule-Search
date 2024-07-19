@@ -1,0 +1,37 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Available Courses</h1>
+
+<% if user_signed_in? %>
+<div id="avail_courses">
+  <table>
+  <tr>
+    <th>Title</th>
+    <th>Subject</th>
+    <th>Course Number</th>
+    <th>Semester</th>
+    <th>Days</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+  </tr>
+  <% @avail_courses.each do |avail_course| %>
+    <tr>
+    <%= render avail_course %>
+    </tr>
+    <p>
+      <!-- <%= link_to "Show this available course", avail_course %> -->
+    </p>
+  <% end %>
+  </table>
+</div>
+ <% end %>
+
+<!-- <%= link_to "New avail course", new_avail_course_path %> -->
+<div class="btn-container">
+  <div class="btn-box">
+    <%= link_to "View registered classes", reg_classes_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+

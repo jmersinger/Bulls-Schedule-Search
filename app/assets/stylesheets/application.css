@@ -1,0 +1,110 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require fullcalendar
+ */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #006400;
+}
+
+.top-bar {
+  width: 100%;
+  height: 50px;
+  background-color: #006400;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 1%;
+  padding-left: 1%;
+  color: white;
+}
+
+.projName {
+  font-size: 30px;
+  color: rgb(205, 174, 0);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login {
+  margin-left: 42%;
+}
+
+.signup {
+  margin-left: 3%;
+}
+
+.navLink {
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.menu-button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgb(205, 174, 0);
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 3%;
+}
+
+.menu-line {
+  width: 20px;
+  height: 2px;
+  background-color: white;
+}
+
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.btn-box {
+  width: 300px;
+  padding: 20px;
+  background-color: #fff; 
+}
+
+.bdy-box {
+  width: 45%;
+  padding: 20px;
+  background-color: #fff; 
+  border: 1px solid #006400; 
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(205, 174, 0); 
+}
+
+.bdy-box h1 {
+
+  color: #006400; 
+  text-align: center;
+}
+
+.bdy-box p {
+
+  text-align: center;
+}

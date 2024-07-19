@@ -1,0 +1,11 @@
+<div class="btn-container">
+    <div class="bdy-box">
+
+    <% if user_signed_in? %>
+    <div id="calendar" class="fc"></div>
+    <% end %>
+
+     <%= link_to "View registered classes", reg_classes_path, class: 'btn btn-secondary' %>
+
+    </div>
+</div>

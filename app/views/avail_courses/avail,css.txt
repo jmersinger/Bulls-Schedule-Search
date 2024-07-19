@@ -1,0 +1,34 @@
+/* Styles for the table and its contents */
+#<%= dom_id avail_course %> {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+#<%= dom_id avail_course %> td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+}
+
+#<%= dom_id avail_course %> tr {
+    background-color: #f2f2f2;
+}
+
+#<%= dom_id avail_course %> tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+#<%= dom_id avail_course %> td a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+#<%= dom_id avail_course %> td a:hover {
+    text-decoration: underline;
+}
+
+#<%= dom_id avail_course %> tr:hover {
+    background-color: #f1f1f1;
+}

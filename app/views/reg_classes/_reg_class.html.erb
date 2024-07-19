@@ -1,0 +1,12 @@
+<div id="<%= dom_id reg_class %>"> 
+<td><%= link_to reg_class.avail_course.course.title, reg_class %></td>
+<td><%= reg_class.avail_course.course.subject %></td>
+<td><%= reg_class.avail_course.course.c_num %></td>
+<td><%= reg_class.avail_course.semester %></td>
+<td><%= reg_class.avail_course.days %></td>
+<td><%= reg_class.avail_course.date_start %></td>
+<td><%= reg_class.avail_course.date_end %></td>
+<td><%= reg_class.avail_course.time_start.strftime("%I:%M %p")%></td>
+<td><%= reg_class.avail_course.time_end.strftime("%I:%M %p") %></td>
+<td><%= reg_class.avail_course.professor_name %></td>
+</div>

@@ -1,0 +1,24 @@
+<% if user_signed_in? %> 
+<div class="login-container">
+<div class="login-box">
+ <div> <h2>Welcome <%= current_user.first_name %></h2> </div> 
+ <%= link_to "View Available Courses", avail_courses_path, class: 'btn btn-primary' %>
+ <%= link_to "View Registered Classes", reg_classes_path, class: 'btn btn-primary' %>
+</div>
+</div>
+
+<% else %>
+
+<div class="btn-container">
+    <div class="bdy-box">
+    <h1>Welcome</h1>
+        <p>
+            Welcome to the Bulls Sceduale Search <br>
+            Register for your courses easily and quickly! <br>
+            Please sign in to an account to access the functionality of this website. <br>
+            If you do not have an account, registration is easy!
+        </p>
+    </div>
+</div>
+
+<% end %>

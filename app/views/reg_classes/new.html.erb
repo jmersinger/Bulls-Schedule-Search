@@ -1,0 +1,27 @@
+<h1>Register for Class</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Subject</th>
+    <th>Course Number</th>
+    <th>Semester</th>
+    <th>Days</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+  </tr>
+<% AvailCourse.where(id: params['reg_course_id']).each do |reg_class| %>
+  <tr>
+  <%= render reg_class %>
+  </tr>
+<% end %>
+</table>
+
+<div class="btn-container">
+  <div class="btn-box">
+    <%= render "form", reg_class: @reg_class %>
+    <%= link_to "Back to available courses", avail_courses_path, class: 'btn btn-secondary' %>
+  </div>
+</div>

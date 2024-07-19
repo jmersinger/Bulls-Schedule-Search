@@ -1,0 +1,54 @@
+
+<div class="login-container">
+<div class="login-box">
+<%= form_with(model: avail_course) do |f| %>
+  <% if avail_course.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(avail_course.errors.count, "error") %> prohibited this avail_course from being saved:</h2>
+
+      <ul>
+        <% avail_course.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :semester %><br />
+    <%= f.select :semester, options_for_select(['Fall2024', 'Spring2025']), { prompt: 'Select Semester' }, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :days %><br />
+    <%= f.select :days, options_for_select(['MW', 'TR']), { prompt: 'Select Days' }, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :date_start %><br />
+    <%= f.date_select :date_start, start_year: 2024, end_year: 2026 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :date_end %><br />
+    <%= f.date_select :date_end, start_year: 2024, end_year: 2026 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :time_start %><br />
+    <%= f.time_select :time_start %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :time_end %><br />
+    <%= f.time_select :time_end %>
+  </div>
+
+
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>
+</div>

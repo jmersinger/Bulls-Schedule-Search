@@ -1,0 +1,15 @@
+<div id="<%= dom_id avail_course %>">
+
+
+<td><%= link_to avail_course.course.title, avail_course %></td>
+<td><%= avail_course.course.subject %></td>
+<td><%= avail_course.course.c_num %></td>
+<td><%= avail_course.semester %></td>
+<td><%= avail_course.days %></td>
+<td><%= avail_course.date_start %></td>
+<td><%= avail_course.date_end %></td>
+<td><%= avail_course.time_start.strftime("%I:%M %p")%></td>
+<td><%= avail_course.time_end.strftime("%I:%M %p") %></td>
+
+
+</div>

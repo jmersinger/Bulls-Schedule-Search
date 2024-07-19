@@ -1,0 +1,38 @@
+/* Styles for the table and its contents */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+}
+
+ tr {
+    background-color: #f2f2f2;
+}
+
+ tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+ td a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+ td a:hover {
+    text-decoration: underline;
+}
+
+ tr:hover {
+    background-color: #e6e6e6;
+}
+
+tr:hover:nth-child(odd) {
+    background-color: #e0e0e0;
+}

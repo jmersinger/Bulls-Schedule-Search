@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+
+<table>
+<tr>
+  <th>Title</th>
+  <th>Subject</th>
+  <th>Course Number</th>
+  <th>Semester</th>
+  <th>Days</th>
+  <th>Start Date</th>
+  <th>End Date</th>
+  <th>Start Time</th>
+  <th>End Time</th>
+</tr>
+<tr><%= render @avail_course %></tr>
+</table>
+
+<div class="btn-container">
+  <div class="btn-box">
+      <!-- <%= link_to "Edit this avail course", edit_avail_course_path(@avail_course) %> | -->
+      <%= link_to "Register for this course", new_reg_class_path(:reg_course_id => @avail_course.id), class: 'btn btn-primary' %>
+      <%= link_to "Back to available courses", avail_courses_path, class: 'btn btn-secondary' %>
+
+      <!-- <%= button_to "Destroy this available course", @avail_course, method: :delete %> -->
+    </div>
+</div>

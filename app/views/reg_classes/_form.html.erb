@@ -1,0 +1,23 @@
+<%= form_with(model: reg_class) do |f| %>
+  <% if reg_class.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(reg_class.errors.count, "error") %> prohibited this reg_class from being saved:</h2>
+
+      <ul>
+        <% reg_class.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.hidden_field  :user_id, value: current_user.id %>
+    <%= f.hidden_field  :avail_course_id, value: params['reg_course_id'] %>
+    <%= f.hidden_field  :registration_time, value: Time.now %>
+  </div>
+
+  <div>
+    <%= f.submit "Register", class: 'btn btn-primary'  %>
+  </div>
+<% end %>

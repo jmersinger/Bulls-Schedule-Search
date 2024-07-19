@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+<table>
+<tr>
+    <th>Title</th>
+    <th>Subject</th>
+    <th>Course Number</th>
+    <th>Semester</th>
+    <th>Days</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+  </tr>
+<tr><%= render @reg_class %></tr>
+</table>
+
+<div class="btn-container">
+  <div class="btn-box">
+    <%= button_to "Unregister", @reg_class, method: :delete, class: 'btn btn-primary' %>
+    <!-- <%= link_to "Edit this reg class", edit_reg_class_path(@reg_class) %> | -->
+    <%= link_to "Back to registered classes", reg_classes_path, class: 'btn btn-secondary' %>
+  </div>
+</div>

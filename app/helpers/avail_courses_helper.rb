@@ -1,0 +1,2 @@
+module AvailCoursesHelper
+end
